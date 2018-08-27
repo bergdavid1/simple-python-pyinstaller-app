@@ -44,8 +44,8 @@ class TestCalc(unittest.TestCase):
         result = calc.add2('abc', '5.5')
         self.assertEqual(result, 'abc5.5')
 
-    def test_should_pass(self):
-        self.assertFalse(False)
+    def test_should_fail(self):
+        self.assertFalse(True)
 
 
 if __name__ == '__main__':
