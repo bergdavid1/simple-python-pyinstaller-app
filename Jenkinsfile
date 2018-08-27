@@ -24,6 +24,11 @@ pipeline {
                 always {
                     junit 'test-reports/results.xml'
                 }
+                failure {
+                    mail to: 'berg.david1@mayo.edu',
+                    subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+                    body: "Something is wrong with ${env.BUILD_URL}"
+                }
             }
         }
     }
